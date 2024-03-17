@@ -188,6 +188,17 @@ h6 {
 .section-content {
 	margin-top: 80px;
 }
+.section-content-download {
+	margin-top: 40px;
+}
+.section-content-download ul {
+	margin-bottom: 40px;
+}
+.section-content-download a.weblink {
+	text-decoration: none;
+	color: #ffffff;
+  	border-bottom: 1px dotted #ffffff;
+}
 .icon-box {
 	margin-bottom:50px;
 }
