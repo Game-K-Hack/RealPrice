@@ -166,13 +166,15 @@
               if (data.message === "Not Found") {
                   alert("Utilisateur non trouvé sur GitHub");
               } else {
-                  // Mettre à jour l'URL de l'avatar et le nom d'utilisateur
-                  document.getElementById(id + "avatar").src = data.avatar_url;
-                  if (data.name === null) {
-                    document.getElementById(id +"username").textContent = data.login;
-                  } else {
-                    document.getElementById(id +"username").textContent = data.name;
-                  }
+		  if (!data.message.includes("API rate limit exceeded")) {
+		    // Mettre à jour l'URL de l'avatar et le nom d'utilisateur
+		    document.getElementById(id + "avatar").src = data.avatar_url;
+		    if (data.name === null) {
+		      document.getElementById(id +"username").textContent = data.login;
+		    } else {
+		      document.getElementById(id +"username").textContent = data.name;
+		    }
+		  }
               }
           }).catch(error => console.error("Erreur lors de la récupération des données GitHub:", error));
   }
